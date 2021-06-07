@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-thumbnail>
+        <img [src]="img1|async">
+      </ion-thumbnail>
+      <ion-label>{{user.name}}</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let anime of animes">
+      <ion-card>
+        <ion-img [src]="anime.image"></ion-img> 
+        <ion-card-content>
+          <p>Nom {{anime.nom}} </p>
+          <p>Rate {{anime.rate}} dt</p>
+          <p>Nb Episode {{anime.nbEpisode}} </p>
+          <p>quantite: {{anime.date}} </p>
+          <ion-button color="default" slot="end" (click)="addToList(anime)">addToList</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

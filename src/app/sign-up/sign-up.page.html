@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signUp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-label>
+      Email
+    </ion-label>
+    <ion-input placeholder="Email" [(ngModel)]="email" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      Password
+    </ion-label>
+    <ion-input placeholder="Password" type="password" [(ngModel)]="password" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      Retype Password
+    </ion-label>
+    <ion-input placeholder="Password" type="password" [(ngModel)]="password1" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      first and lastName 
+    </ion-label>
+    <ion-input placeholder="first and lastName " [(ngModel)]="name" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label> 
+      <ion-thumbnail slot="start">
+        <ion-img src="https://lh3.googleusercontent.com/proxy/-QrvdlCYkerSxkEpHveWVztFhkNv9nnk0bvfHqDgfvkGdNn4sohF6f1eKZfCKkggEIjn_EjPheSA3T1y6EXScNwwUA-gY6ZqdFyi0tJOS-haqn9L3TICXHPmRYjcU0Zxizf3nZSUjMFuoOYhHEg5WVte-Im1PUo"></ion-img>
+      </ion-thumbnail> 
+    </ion-label>
+    <ion-radio-group [(ngModel)]="gender" value="gender" required>
+      <ion-item>
+        <ion-label>male</ion-label>
+        <ion-radio slot="start" value="male"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>female</ion-label>
+        <ion-radio slot="start" value="female"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      Age
+    </ion-label>
+    <ion-input [(ngModel)]="age" placeholder="age" type="number" required>
+    </ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <label class="myFakeUploadButton" for="myFileInput"><ion-icon name="image-outline" slot="start"></ion-icon >Upload Photo</label>
+    <input type="file" id="myFileInput" #id_f required>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="signUp();">sign up</ion-button>
+  </ion-item>
+</ion-list>
+</ion-content>
