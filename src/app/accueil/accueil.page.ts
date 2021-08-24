@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -11,7 +12,7 @@ export class AccueilPage implements OnInit {
   user:any;
   animes:any=[];
   img1:any;
-  constructor(private fireStore:AngularFirestore , private firestorage:AngularFireStorage) {
+  constructor(private router: Router,private fireStore:AngularFirestore , private firestorage:AngularFireStorage) {
     this.user=JSON.parse(localStorage.getItem('user'));
     //console.log(this.user.image);
     this.img1=this.firestorage.ref(this.user.image).getDownloadURL();
@@ -23,11 +24,11 @@ export class AccueilPage implements OnInit {
     this.fireStore.collection("WatchedList").add({idUser:this.user.id,nomUser:this.user.nom })
       .then( data => { 
         
-        this.presentToast("Rent Successfuly");
+        //this.presentToast("Rent Successfuly");
         this.router.navigateByUrl("/home-page")
       })
       .catch( err => { 
-        this.presentToast(err);
+        //this.presentToast(err);
         console.log(err); });
   }
   getAnimes(){

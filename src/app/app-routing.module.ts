@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'sign-up',
     loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
-  },
+  }/*,
   {
     path: 'accueil',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  }*/,
+  {
+    path: 'accueil1',
+    loadChildren: () => import('./accueil1/accueil1.module').then( m => m.Accueil1PageModule)
   },
 ];
 
